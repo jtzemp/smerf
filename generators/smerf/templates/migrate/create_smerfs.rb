@@ -5,7 +5,7 @@ class CreateSmerfs < ActiveRecord::Migration
       t.string    :name,          :null => false
       t.string    :code,          :null => false
       t.integer   :active,        :null => false  
-      t.text      :cache
+      t.text      :cache,         :limit => 16777215
       t.timestamp :cache_date
     end
     add_index :smerf_forms, [:code], :unique => true
